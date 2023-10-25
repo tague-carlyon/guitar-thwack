@@ -48,14 +48,6 @@ if hdwf.value == hdwfNone.value:
     print("failed to open device\n"+str(szError.value))
     quit()
 
-##print("Generating square wave...")
-###                                    AWG 1     carrier
-##dwf.FDwfAnalogOutNodeEnableSet(hdwf, c_int(0), c_int(0), c_int(1))
-##dwf.FDwfAnalogOutNodeFunctionSet(hdwf, c_int(0), c_int(0), funcSquare)
-##dwf.FDwfAnalogOutNodeFrequencySet(hdwf, c_int(0), c_int(0), c_double(11))
-##dwf.FDwfAnalogOutNodeOffsetSet(hdwf, c_int(0), c_int(0), c_double(1.0))
-##dwf.FDwfAnalogOutNodeAmplitudeSet(hdwf, c_int(0), c_int(0), c_double(1.0))
-##dwf.FDwfAnalogOutConfigure(hdwf, c_int(0), c_int(1))
 
 #set up acquisition
 dwf.FDwfAnalogInFrequencySet(hdwf, c_double(Sample_Rate))
@@ -73,10 +65,10 @@ dwf.FDwfAnalogInTriggerSourceSet(hdwf, trigsrcDetectorAnalogIn) #one of the anal
 dwf.FDwfAnalogInTriggerTypeSet(hdwf, trigtypeEdge)
 dwf.FDwfAnalogInTriggerChannelSet(hdwf, c_int(0)) # first channel
 dwf.FDwfAnalogInTriggerLevelSet(hdwf, c_double(0.5)) # 0.5V
-#dwf.FDwfAnalogInTriggerConditionSet(hdwf, DwfTriggerSlopeEither) 
-dwf.FDwfAnalogInTriggerConditionSet(hdwf, DwfTriggerSlopeRise) 
+#dwf.FDwfAnalogInTriggerConditionSet(hdwf, DwfTriggerSlopeEither)
+dwf.FDwfAnalogInTriggerConditionSet(hdwf, DwfTriggerSlopeRise)
 
-#or use trigger from other instruments or external trigger
+# or use trigger from other instruments or external trigger
 #dwf.FDwfAnalogInTriggerSourceSet(hdwf, trigsrcExternal1) 
 #dwf.FDwfAnalogInTriggerConditionSet(hdwf, DwfTriggerSlopeEither) 
 
