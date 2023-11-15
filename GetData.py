@@ -15,6 +15,10 @@ import sys
 import matplotlib.pyplot as plt
 import numpy
 
+File_name = input("what would you like to name your File: ")
+
+File = open(File_name, "w")
+
 
 if sys.platform.startswith("win"):
     dwf = cdll.dwf
@@ -161,6 +165,15 @@ while cSamples < nSamples:
     
 
 dwf.FDwfDeviceCloseAll()
+i=0
+T = numpy.linspace(0,1,nSamples)
+while(i<nSamples):
+    File.write(str(T[i]))
+    File.write(' ')
+    File.write(str(rgdSamples[i])+ '\n')
+    i+=1
+File.close()
+    
 
 fSamples = numpy.fft.fft(rgdSamples)
 
