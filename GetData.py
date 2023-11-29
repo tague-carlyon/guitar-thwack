@@ -90,7 +90,7 @@ dwf.FDwfAnalogInTriggerSourceSet(hdwf, trigsrcDetectorAnalogIn) #one of the anal
 dwf.FDwfAnalogInTriggerConditionSet(hdwf, DwfTriggerSlopeRise)
 #dwf.FDwfAnalogInTriggerTypeSet(hdwf, trigtypeEdge)
 dwf.FDwfAnalogInTriggerChannelSet(hdwf, c_int(0)) # first channel
-dwf.FDwfAnalogInTriggerLevelSet(hdwf, c_double(1)) # 0.5V
+dwf.FDwfAnalogInTriggerLevelSet(hdwf, c_double(3)) # 0.5V
 #dwf.FDwfAnalogInTriggerConditionSet(hdwf, DwfTriggerSlopeEither)
 #dwf.FDwfAnalogInTriggerConditionSet(hdwf, DwfTriggerSlopeRise)
 
