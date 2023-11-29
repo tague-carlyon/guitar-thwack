@@ -36,7 +36,7 @@ SaveFile = input('Enter save file name: ')
 SFile = open(SaveFile, 'w')
 
 for l in range(j):
-    SFile.write(str(DataArr[l,0])+' '+str(DataArr[l,1]))
+    SFile.write(str(DataArr[l,0])+' '+str(DataArr[l,1])+'\n')
 
 Farr =numpy.fft.fft(DataArr[:,1])
 plt.plot(DataArr[:,0],numpy.abs(Farr))
